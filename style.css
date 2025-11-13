@@ -1,0 +1,851 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+background: radial-gradient(
+  circle at top,
+  #ff7aa5,
+  #e0438d,
+  #6a35b8,
+  #0a0012
+);
+
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* heart galaxy background */
+.heart-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.heart {
+  position: absolute;
+  color: #ff8acb;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px rgba(255, 138, 203, 0.9);
+  animation: twinkleHeart 6s ease-in-out infinite;
+}
+
+/* sprinkle hearts across the page */
+.h1  { top: 8%;  left: 10%; }
+.h2  { top: 15%; left: 45%; }
+.h3  { top: 10%; right: 12%; }
+.h4  { top: 25%; left: 5%; }
+.h5  { top: 28%; right: 20%; }
+.h6  { top: 35%; left: 30%; }
+.h7  { top: 40%; right: 5%; }
+.h8  { top: 45%; left: 60%; }
+.h9  { top: 50%; left: 15%; }
+.h10 { top: 55%; right: 35%; }
+.h11 { top: 60%; left: 45%; }
+.h12 { top: 65%; right: 15%; }
+.h13 { top: 70%; left: 5%; }
+.h14 { top: 72%; left: 70%; }
+.h15 { top: 78%; right: 8%; }
+.h16 { top: 80%; left: 25%; }
+.h17 { top: 83%; right: 30%; }
+.h18 { top: 87%; left: 50%; }
+.h19 { top: 90%; left: 10%; }
+.h20 { top: 93%; right: 18%; }
+
+/* different timings so they twinkle at different moments */
+.h1  { animation-delay: 0s; }
+.h2  { animation-delay: 0.5s; }
+.h3  { animation-delay: 1s; }
+.h4  { animation-delay: 1.5s; }
+.h5  { animation-delay: 2s; }
+.h6  { animation-delay: 2.5s; }
+.h7  { animation-delay: 3s; }
+.h8  { animation-delay: 3.5s; }
+.h9  { animation-delay: 4s; }
+.h10 { animation-delay: 4.5s; }
+.h11 { animation-delay: 5s; }
+.h12 { animation-delay: 5.5s; }
+.h13 { animation-delay: 6s; }
+.h14 { animation-delay: 6.5s; }
+.h15 { animation-delay: 7s; }
+.h16 { animation-delay: 7.5s; }
+.h17 { animation-delay: 8s; }
+.h18 { animation-delay: 8.5s; }
+.h19 { animation-delay: 9s; }
+.h20 { animation-delay: 9.5s; }
+
+@keyframes twinkleHeart {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+/* keep content above hearts */
+.sky,
+main,
+.modal {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* keep main content above hearts */
+.sky,
+main,
+.modal {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* Title / intro screen */
+.sky {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #2b0f3b, #ff7ac4);
+  position: relative;
+}
+
+.title-screen {
+  text-align: center;
+  padding: 2rem;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.title-screen h1 {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.title-screen .name {
+  color: #ffd1e3;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.4rem;
+  border: 3px solid #fff;
+  background: #ff7ac4;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  box-shadow: 0 4px 0 #b33276;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b33276;
+}
+
+/* Main content */
+.hidden {
+  display: none;
+}
+
+main {
+  padding: 3rem 1rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Character profile layout */
+.profile-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+
+.avatar-box,
+.stats-box {
+  border: 4px solid #fff;
+  padding: 1rem;
+  background: radial-gradient(circle at top, #2e0423, #140212);
+}
+
+.lore-left {
+  margin-top: 0.8rem;
+  font-size: 0.55rem;
+}
+
+
+
+/* (not used now, but harmless if it stays) */
+.avatar-placeholder {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border: 3px dashed #fff;
+}
+
+/* Avatar slider */
+.avatar-slider {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar-frame {
+  border: 3px dashed #fff;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #120818;
+}
+
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-arrow {
+  border: 3px solid #fff;
+  background: #ff7ac4;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #b33276;
+}
+
+.avatar-arrow:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #b33276;
+}
+
+.avatar-dots {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.avatar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.avatar-dot.active {
+  background: #ff7ac4;
+}
+
+/* Stats list */
+.stat-list {
+  margin-top: 1rem;
+  list-style: none;
+  font-size: 0.65rem;
+}
+
+.stat-list li {
+  margin-bottom: 0.4rem;
+}
+
+.hp-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.65rem;
+}
+
+.hearts {
+  font-size: 0.8rem;
+}
+
+/* 21 hearts grid */
+.reasons .hint {
+  text-align: center;
+  font-size: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.hearts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  gap: 1.4rem; /* gaps between boxes */
+  justify-items: center;
+  padding: 2rem 3rem 4rem;
+}
+
+
+.heart-btn {
+  width: 95px;
+  height: 95px;
+  background: #2a0028; /* deep dark magenta */
+  border: 2px solid #ff4ec8; /* bright neon pink outline */
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 12px #ff4ec8,   /* neon outer glow */
+              inset 0 0 8px #ff7ee5; /* slight inner glow */
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.heart-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 20px #ff4ec8,
+              inset 0 0 12px #ff99ff;
+  background: #3b0039; /* lighter magenta on hover */
+}
+
+
+.heart-icon {
+  font-size: 1.9rem;
+  color: #ff5ea8; /* neon pink heart */
+  text-shadow: 0 0 4px #ff0080, 0 0 8px #ff4ec8;
+  margin-bottom: 0.2rem;
+}
+
+
+.heart-number {
+  color: #ffd8f5;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #ff4ec8;
+}
+
+
+
+/* Modal */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  font-family: "Press Start 2P", system-ui, sans-serif;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  background: #1b0f23;
+  border: 4px solid #fff;
+  padding: 1rem;
+  max-width: 420px;
+  width: 90%;
+  z-index: 60;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.modal-image-wrap {
+  width: 100%;
+  border: 3px dashed #fff;
+  margin-bottom: 0.8rem;
+}
+
+.modal-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#modal-caption {
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+/* Stats box layout */
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.6rem;
+}
+
+/* Header grid like labels/values */
+.stats-header {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.stats-label {
+  opacity: 0.8;
+}
+
+.stats-value {
+  text-align: right;
+}
+
+.main-name {
+  font-size: 0.8rem;
+}
+
+/* small info grid */
+.mini-grid {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+
+  /* strict 2-column layout */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.2rem;
+  row-gap: 0.4rem;
+}
+
+.mini-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.55rem;
+}
+
+.mini-row span:first-child {
+  opacity: 0.9;
+  white-space: nowrap;         /* keep label on one line */
+}
+
+.mini-row span:last-child {
+  flex: 1;
+  line-height: 1.4;
+  word-break: break-word;      /* long text wraps nicely */
+}
+
+
+
+
+/* core stats */
+.core-stats {
+  margin-top: 0.5rem;
+}
+
+.core-stats h3,
+.sw-column h3,
+.achievements h3,
+.relationship-stats h3 {
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.core-stats ul,
+.achievements ul,
+.relationship-stats ul {
+  list-style: none;
+}
+
+.core-stats li,
+.achievements li,
+.relationship-stats li {
+  margin-bottom: 0.25rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.achievement-box {
+  border: 2px solid #ff9bd4;
+  background: #1f0b26;
+  box-shadow: 0 0 8px rgba(255, 155, 212, 0.6);
+  padding: 0.35rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.achievement-icon {
+  font-size: 0.8rem;
+}
+
+.achievement-label {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+
+/* strengths / weaknesses */
+.sw-grid {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.sw-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sw-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.4rem;
+  border: 2px solid #ff7ac4;
+  background: #1f0b26;
+  box-shadow: 0 0 10px rgba(255, 122, 196, 0.6);
+}
+
+.sw-icon {
+  width: 32px;
+  height: 32px;
+  border: 2px dashed #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+}
+
+.sw-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sw-title {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.sw-note {
+  font-size: 0.5rem;
+  opacity: 0.9;
+}
+
+.sw-bar {
+  width: 100%;
+  height: 8px;
+  border: 2px solid #ff7ac4;
+  padding: 1px;
+  background: rgba(255, 122, 196, 0.15);
+}
+
+.sw-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7ac4, #ffd1e3);
+  box-shadow: 0 0 6px rgba(255, 122, 196, 0.9);
+}
+
+
+/* achievements & relationship */
+.achievements,
+.relationship-stats {
+  margin-top: 0.6rem;
+}
+/* make avatar + stats align from top nicely */
+.profile-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr);
+  gap: 1.5rem;
+  align-items: flex-start; /* NEW */
+}
+
+/* trait badges under avatar */
+.trait-badges {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.trait-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #fff;
+  background: #1b0f23;
+  box-shadow: 0 3px 0 #b33276;
+  font-size: 0.5rem;
+}
+
+.trait-icon {
+  font-size: 0.7rem;
+}
+
+.trait-label {
+  white-space: nowrap;
+}
+.sw-under-avatar {
+  margin-top: 1rem;
+}
+/* stats box now contains stacked glowing cards */
+.stats-box {
+  border: 4px solid #fff;
+  padding: 1rem;
+  background: radial-gradient(circle at top, #2e0423, #140212);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 0.6rem;
+}
+
+/* header card: name + hp + rarity */
+.stats-header-card {
+  display: grid;
+  grid-template-columns: 1.2fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+  border: 2px solid #ffb3e6;
+  background: rgba(15, 2, 25, 0.9);
+  box-shadow: 0 0 10px rgba(255, 153, 221, 0.7);
+}
+
+.stats-name-row {
+  margin-bottom: 0.3rem;
+}
+
+.stats-name {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.hp-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.hp-label {
+  font-size: 0.5rem;
+}
+
+.hp-bar {
+  height: 8px;
+  border: 2px solid #ff7ac4;
+  padding: 1px;
+  background: rgba(255, 122, 196, 0.15);
+}
+
+.hp-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7ac4, #ffd1e3);
+  box-shadow: 0 0 8px rgba(255, 122, 196, 0.9);
+}
+
+.hp-value {
+  font-size: 0.45rem;
+}
+
+/* rarity badge */
+.stats-header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rarity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.5rem;
+  border: 2px solid #ffd966;
+  background: #402100;
+  box-shadow: 0 0 10px rgba(255, 217, 102, 0.8);
+}
+
+.rarity-star {
+  color: #ffd966;
+  text-shadow: 0 0 6px rgba(255, 217, 102, 1);
+}
+
+.rarity-text {
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* generic card for each section */
+.stats-section-card {
+  padding: 0.6rem 0.7rem;
+  border: 2px solid #ff9bd4;
+  background: rgba(15, 2, 25, 0.95);
+  box-shadow: 0 0 10px rgba(255, 155, 212, 0.6);
+}
+
+.section-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  margin: 0.3rem 0 0.4rem;
+  font-size: 0.45rem;
+  letter-spacing: 2px;
+}
+
+.hearts-divider {
+  color: #ffb3e6;
+}
+
+.stars-divider {
+  color: #ffd1e3;
+}
+
+/* mini grid tweaks (reuse existing .mini-grid / .mini-row) */
+.mini-grid {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  padding-top: 0.4rem;
+  margin-top: 0.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.mini-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.mini-row span:first-child {
+  opacity: 0.85;
+}
+
+/* core stats layout */
+.core-stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.core-stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.core-icon {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  background: #1f0b26;
+}
+
+.core-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.core-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.core-bar {
+  width: 100%;
+  height: 7px;
+  border: 2px solid #ff7ac4;
+  padding: 1px;
+  background: rgba(255, 122, 196, 0.15);
+}
+
+.core-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7ac4, #ffd1e3);
+  box-shadow: 0 0 6px rgba(255, 122, 196, 0.9);
+}
+
+.core-caption {
+  font-size: 0.5rem;
+}
+
+/* lore / achievements / relationship text */
+.lore-card p {
+  font-size: 0.55rem;
+  line-height: 1.5;
+}
+
+.achievements-card ul,
+.relationship-card ul {
+  list-style: none;
+  font-size: 0.55rem;
+}
+
+.achievements-card li,
+.relationship-card li {
+  margin-bottom: 0.25rem;
+}

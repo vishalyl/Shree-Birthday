@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy 21st, Babe 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sky">
+    <div class="title-screen">
+      <h1>HAPPY 21st, <span class="name">SHREEBIEE</span>!</h1>
+      <p class="subtitle">Press Start to view character profile</p>
+      <button id="enter-btn" class="btn">▶ START</button>
+    </div>
+  </div>
+
+  <main id="main-content" class="hidden">
+    <!-- Character Profile Section -->
+    <section class="section profile">
+      <h2>Character Profile</h2>
+
+      <div class="profile-card">
+        <div class="avatar-box">
+          <div class="avatar-slider">
+            <button class="avatar-arrow" id="avatar-prev">◀</button>
+
+            <div class="avatar-frame">
+              <!-- start with first photo, will be changed by JS -->
+              <img id="avatar-img" src="images/avatar1.jpg" alt="Her photo" />
+            </div>
+
+            <button class="avatar-arrow" id="avatar-next">▶</button>
+          </div>
+
+          <div class="avatar-dots" id="avatar-dots">
+            <!-- JS will create 5 dots here -->
+          </div>
+
+          <div class="trait-badges">
+            <div class="trait-badge">
+              <span class="trait-icon">🐶</span>
+              <span class="trait-label">Vishal's GF</span>
+            </div>
+            <div class="trait-badge">
+              <span class="trait-icon">🍦</span>
+              <span class="trait-label">Choc Ice Cream +40% HP</span>
+            </div>
+            <div class="trait-badge">
+              <span class="trait-icon">🥤</span>
+              <span class="trait-label">Cold Coffee +40% Health</span>
+            </div>
+            <div class="trait-badge">
+              <span class="trait-icon">💌</span>
+              <span class="trait-label">Loves Quality Time & Reels</span>
+            </div>
+            <div class="trait-badge">
+              <span class="trait-icon">😈</span>
+              <span class="trait-label">Boyfriend Beater</span>
+            </div>
+          </div>
+
+          <!-- Strengths & weaknesses under the image -->
+          <div class="sw-grid sw-under-avatar">
+            <div class="sw-column">
+              <h3>Strengths</h3>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- therapist icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">Therapist</p>
+                  <div class="sw-bar">
+                    <span style="width:95%;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- hype woman icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">Hype Woman</p>
+                  <p class="sw-note">Hype power: 120% boost when I’m sad</p>
+                  <div class="sw-bar">
+                    <span style="width:100%;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- menace icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">Menace</p>
+                  <div class="sw-bar">
+                    <span style="width:90%;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sw-column">
+              <h3>Weaknesses</h3>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- overthinker icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">Overthinker</p>
+                  <div class="sw-bar">
+                    <span style="width:90%;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- people pleaser icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">People-pleaser</p>
+                  <div class="sw-bar">
+                    <span style="width:95%;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sw-card">
+                <div class="sw-icon"><!-- sleep icon here --></div>
+                <div class="sw-text">
+                  <p class="sw-title">Sleep Schedule: Broken</p>
+                  <div class="sw-bar">
+                    <span style="width:100%;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="stats-section-card lore-card lore-left">
+    <h3 class="section-title">Character Lore</h3>
+    <div class="section-divider hearts-divider">♥ ♥ ♥ ♥ ♥</div>
+    <p>
+      A chaotic ice-cream warrior from Mahalingapuram,<br>
+      who bullies her boyfriend daily but keeps his brain alive,<br>
+      powered by chocolate ice cream, cold coffee, and pure menace.
+    </p>
+  </div>
+
+        </div>
+
+        
+
+<div class="stats-box">
+  <!-- HEADER: name + HP + rarity -->
+  <div class="stats-header-card">
+    <div class="stats-header-left">
+      <div class="stats-name-row">
+        <span class="stats-name">SHREENIDHI</span>
+      </div>
+      <div class="hp-row">
+        <span class="hp-label">HP</span>
+        <div class="hp-bar">
+          <div class="hp-fill"></div>
+        </div>
+        <span class="hp-value">9999 / 9999</span>
+      </div>
+    </div>
+    <div class="stats-header-right">
+      <div class="rarity-badge">
+        <span class="rarity-star">★</span>
+        <span class="rarity-text">Legendary Mythic Girlfriend</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE DATA CARD -->
+  <div class="stats-section-card info-card">
+    <h3 class="section-title">Profile Data</h3>
+    <div class="section-divider hearts-divider">♥ ♥ ♥ ♥ ♥</div>
+    <div class="mini-grid">
+      <div class="mini-row">
+        <span>🎂 Age:</span><span>21</span>
+      </div>
+      <div class="mini-row">
+        <span>♀️ Gender:</span><span>Female</span>
+      </div>
+      <div class="mini-row">
+        <span>🐶 Fav Animal:</span><span>Dogs</span>
+      </div>
+      <div class="mini-row">
+        <span>🍦 Fav Snack</span><span>Choc ice cream</span>
+      </div>
+      <div class="mini-row">
+        <span>🥤 Healing Potion:</span><span>Cold coffee</span>
+      </div>
+      <div class="mini-row">
+        <span>💌 Love Language:</span><span>Quality time</span>
+      </div>
+      <div class="mini-row">
+        <span>😈 Known For:</span><span>Bullying Vishal</span>
+      </div>
+      <div class="mini-row">
+        <span>📵 Special Trait:</span><span> Healing Aura</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE STATS CARD -->
+  <div class="stats-section-card core-card">
+    <h3 class="section-title">Core Stats</h3>
+    <div class="section-divider stars-divider">✦ ✦ ✦ ✦ ✦</div>
+
+    <div class="core-stats-grid">
+      <div class="core-stat">
+        <div class="core-icon">❤️</div>
+        <div class="core-main">
+          <div class="core-label">Kindness</div>
+          <div class="core-bar">
+            <span style="width: 100%;"></span>
+          </div>
+          <div class="core-caption">Kindness: 100% (1000 / 100)</div>
+        </div>
+      </div>
+
+      <div class="core-stat">
+        <div class="core-icon">🌸</div>
+        <div class="core-main">
+          <div class="core-label">Cuteness</div>
+          <div class="core-bar">
+            <span style="width: 100%;"></span>
+          </div>
+          <div class="core-caption">Cuteness: MAXED OUT</div>
+        </div>
+      </div>
+
+      <div class="core-stat">
+        <div class="core-icon">💬</div>
+        <div class="core-main">
+          <div class="core-label">Sarcasm</div>
+          <div class="core-bar">
+            <span style="width: 95%;"></span>
+          </div>
+          <div class="core-caption">Sarcasm: 9999</div>
+        </div>
+      </div>
+
+      <div class="core-stat">
+        <div class="core-icon">⚡</div>
+        <div class="core-main">
+          <div class="core-label">Chaotic Energy</div>
+          <div class="core-bar">
+            <span style="width: 97%;"></span>
+          </div>
+          <div class="core-caption">Chaotic Energy: 97 / 100</div>
+        </div>
+      </div>
+
+      <div class="core-stat">
+        <div class="core-icon">🧘</div>
+        <div class="core-main">
+          <div class="core-label">Patience with Vishal</div>
+          <div class="core-bar">
+            <span style="width: 100%;"></span>
+          </div>
+          <div class="core-caption">Patience with Vishal: ∞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- ACHIEVEMENTS CARD -->
+  <div class="stats-section-card achievements-card">
+    <h3 class="section-title">Achievements Unlocked</h3>
+    <div class="section-divider stars-divider">✦ ✦ ✦ ✦ ✦</div>
+        <div class="achievements-grid">
+      <div class="achievement-box">
+        <div class="achievement-icon">🪓</div>
+        <div class="achievement-label">Boyfriend Beater</div>
+      </div>
+
+      <div class="achievement-box">
+        <div class="achievement-icon">🩺</div>
+        <div class="achievement-label">Therapist Energy</div>
+      </div>
+
+      <div class="achievement-box">
+        <div class="achievement-icon">😼</div>
+        <div class="achievement-label">Adorable Menace</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RELATIONSHIP STATS CARD -->
+  <div class="stats-section-card relationship-card">
+    <h3 class="section-title">Relationship Stats</h3>
+    <div class="section-divider hearts-divider">♥ ♥ ♥ ♥ ♥</div>
+    <ul>
+      <li>❤️ Status: Permanently in love – no cure</li>
+      <li>🧳 Shared XP: 2 trips, 486 inside jokes, 821 fights survived</li>
+      <li>💞 Compatibility: Perfect (3% reserved for playful fights)</li>
+      <li>🎯 Main Quest: Bully her boyfriend</li>
+      <li>☕ Side Quest: Try every cold coffee in the city</li>
+      <li>🔒 Difficulty Level: Hard to get, impossible to replace</li>
+    </ul>
+  </div>
+</div>
+
+
+      </div>
+    </section>
+
+    <!-- 21 Reasons Section -->
+    <section class="section reasons">
+      <h2>21 Reasons You’re the Best</h2>
+      <p class="hint">Tap a heart to reveal a reason 💌</p>
+
+      <div class="hearts-grid" id="hearts-grid">
+        <!-- Hearts will be injected here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Modal for image + caption -->
+    <div id="reason-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div class="modal-image-wrap">
+          <img id="modal-image" src="" alt="Our photo" />
+        </div>
+        <p id="modal-caption"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+<body>
+  <div class="heart-layer">
+    <span class="heart h1">♥</span>
+    <span class="heart h2">♥</span>
+    <span class="heart h3">♥</span>
+    <span class="heart h4">♥</span>
+    <span class="heart h5">♥</span>
+    <span class="heart h6">♥</span>
+    <span class="heart h7">♥</span>
+    <span class="heart h8">♥</span>
+    <span class="heart h9">♥</span>
+    <span class="heart h10">♥</span>
+    <span class="heart h11">♥</span>
+    <span class="heart h12">♥</span>
+    <span class="heart h13">♥</span>
+    <span class="heart h14">♥</span>
+    <span class="heart h15">♥</span>
+    <span class="heart h16">♥</span>
+    <span class="heart h17">♥</span>
+    <span class="heart h18">♥</span>
+    <span class="heart h19">♥</span>
+    <span class="heart h20">♥</span>
+  </div>
+
+
+</html>
