@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Guard: if any piece missing, skip slider
   if (avatarImg && avatarPrev && avatarNext && avatarDots) {
     const avatarImages = [
-      "images/avatars/1.png",
+      "images/avatars/8.png",
       "images/avatars/2.png",
       "images/avatars/5.png"
     ];
