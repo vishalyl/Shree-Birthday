@@ -41,8 +41,93 @@ document.addEventListener("DOMContentLoaded", () => {
       caption: "Reason #3 – You hype me up even when I’m being a clown."
     },
     {
+      id: 4,
+      img: "images/4.png",
+      caption: "Reason #4 –You make my entire world feel lighter the second you walk into it."
+    },
+    {
+      id: 5,
+      img: "images/5.png",
+      caption: "Reason #5 – You understand parts of me I’ve never been able to explain to anyone else."
+    },
+    {
+      id: 6,
+      img: "images/6.png",
+      caption: "Reason #6 – You understand my moods, my silences, my chaos — and you never run from it."
+    },
+    {
+      id: 7,
+      img: "images/7.png",
+      caption: "Reason #7 – You celebrate my wins like they’re your own, and you hold me during my losses."
+    },
+    {
+      id: 8,
+      img: "images/8.png",
+      caption: "Reason #8 – You bring out the playful, soft, ridiculous version of me that no one else gets to see."
+    },
+    {
+      id: 9,
+      img: "images/9.png",
+      caption: "Reason #9 – You make me feel appreciated in small, quiet ways that I’ll never forget."
+    },
+    {
+      id: 10,
+      img: "images/10.png",
+      caption: "Reason #10 –You forgive me gently, and you love me loudly."
+    },
+        {
+      id: 11,
+      img: "images/11.png",
+      caption: "Reason #11 –You teach me what patience, understanding, and real partnership look like."
+    },
+    {
+      id: 12,
+      img: "images/12.png",
+      caption: "Reason #12 –You make me feel like the luckiest man every time I look at you."
+    },
+    {
+      id: 13,
+      img: "images/13.png",
+      caption: "Reason #13 – You’re my comfort person, my chaos partner, my safe space, and my favorite adventure."
+    },
+    {
+      id: 14,
+      img: "images/14.png",
+      caption: "Reason #14 – You’re the only person who can make me laugh even when I’m genuinely pissed or stressed."
+    },
+    {
+      id: 15,
+      img: "images/15.png",
+      caption: "Reason #15 – Coz you're Autistic"
+    },
+    {
+      id: 16,
+      img: "images/16.png",
+      caption: "Reason #16 – Only person who loves me despite my Hangry side"
+    },
+    {
+      id: 17,
+      img: "images/17.png",
+      caption: "Reason #17 – Because you're the best driver AAHAHAHAHHAHAAH (after me)"
+    },
+    {
+      id: 18,
+      img: "images/18.png",
+      caption: "Reason #18 – Because you're a Lil Funny"
+    },
+    {
+      id: 19,
+      img: "images/19.png",
+      caption: "Reason #19 – Coz you smell so YUMMMM"
+    },
+    {
+      id: 20,
+      img: "images/20.png",
+      caption: "Reason #20 – Because you're YOUUU (I ran out of reasons sorry)"
+    },
+    {
       id: 21,
-      img: "images/4.jpg",
+      img: "images/21.png",
       caption: "Reason #21 – Because life is simply better with you in it."
     }
   ];
@@ -101,8 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const avatarImages = [
       "images/avatars/1.png",
       "images/avatars/2.png",
-      "images/avatars/3.png",
-      "images/avatars/4.png",
       "images/avatars/5.png"
     ];
 
